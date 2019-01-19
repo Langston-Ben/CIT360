@@ -26,12 +26,12 @@ public class Switch {
         
         do {
             System.out.println("Enter a Number: ");
-            System.out.println("1: List Demonstration");
-            System.out.println("2: Map Demonstration");
-            System.out.println("3: Queue Demonstration");
-            System.out.println("4: Set Demonstration");
-            System.out.println("5: Tree Demonstration");
-            System.out.println("Q: Quit");
+            System.out.println("1 - List Demonstration");
+            System.out.println("2 - Map Demonstration");
+            System.out.println("3 - Queue Demonstration");
+            System.out.println("4 - Set Demonstration");
+            System.out.println("5 - Tree Demonstration");
+            System.out.println("Q - Quit");
             
             String input = userInput.next().toUpperCase();
             menuOption = input.concat(input);
