@@ -26,16 +26,20 @@ public class Citwinter {
         one.add("Luke");
         one.add("Yoda");
         one.add("Vader");
-        System.out.println("List Example");
+        System.out.println("\n\nList Example");
         System.out.println("Jedi Knights");
-        Iterator jedi = one.iterator();
         
+        
+        Iterator jedi = one.iterator();
         while(jedi.hasNext()) {
         Object element = jedi.next();
         System.out.print(element + "\n");
         }
         
         System.out.print("\n");
+        
+        
+        
         
         // Set
         System.out.println("Set Example");
@@ -47,6 +51,11 @@ public class Citwinter {
         }
         System.out.println(set + "\n");
         
+        
+        
+        
+        
+        
         //  Map
         System.out.println("Map Example");
         Map two = new HashMap();
@@ -57,7 +66,11 @@ public class Citwinter {
         
         System.out.println("Led Zeppelin is: \n");
         
-        two.forEach((k,v) -> System.out.println("Band Member - " + k + ", Instrument - " + v + "\n"));
+        two.forEach((k,v) -> System.out.println("Band Member - " + k 
+                + ", Instrument - " + v + "\n"));
+        
+        
+        
      
         
         // Tree
@@ -72,11 +85,16 @@ public class Citwinter {
         three.add("Purple");
         
         Iterator list = three.iterator();
-        
         while(list.hasNext()) {
         Object element = list.next();
         System.out.print(element + "\n");
         }
+        
+        
+        
+        
+        
+        
         
         // Queue
         System.out.println("\nQueue Example");
