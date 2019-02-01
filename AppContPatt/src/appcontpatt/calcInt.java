@@ -11,5 +11,5 @@ package appcontpatt;
  */
 public interface calcInt {
     
-    void execute(Integer input1, Integer input2);
+    void execute(Double input1, Double input2);
 }

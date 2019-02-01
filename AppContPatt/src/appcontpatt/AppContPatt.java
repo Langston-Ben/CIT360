@@ -22,20 +22,20 @@ public class AppContPatt {
         
      
             Scanner input = new Scanner(System.in);
-            Integer input1;
-            Integer input2;
+            Double input1;
+            Double input2;
             
             String symbol;
             
             System.out.println("Please enter a number");
-            input1 = Integer.parseInt(input.nextLine());
+            input1 = Double.parseDouble(input.nextLine());
             
             System.out.println("Enter the function you would like to do: \n"
                     + "(+, -, *, /");
             symbol = input.nextLine();
             
             System.out.println("Please enter another number");
-            input2 = Integer.parseInt(input.nextLine());
+            input2 = Double.parseDouble(input.nextLine());
             
             System.out.println("The Answer is: ");
             AppController.applicationHandler(symbol, input1, input2);

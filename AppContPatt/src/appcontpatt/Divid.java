@@ -12,8 +12,8 @@ package appcontpatt;
 public class Divid implements calcInt {
     
      @Override
-    public void execute(Integer input1, Integer input2) {
-                Integer div = input1 / input2;
+    public void execute(Double input1, Double input2) {
+                Double div = input1 / input2;
                 System.out.println(div);
     
 }

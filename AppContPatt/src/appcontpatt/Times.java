@@ -12,8 +12,8 @@ package appcontpatt;
 public class Times implements calcInt {
     
      @Override
-    public void execute(Integer input1, Integer input2) {
-                Integer mult = input1 * input2;
+    public void execute(Double input1, Double input2) {
+                Double mult = input1 * input2;
                 System.out.println(mult);
     
 }

@@ -16,7 +16,7 @@ public class AppController {
 
     public AppController() {
     }
-    public static void applicationHandler(String symbol, Integer input1, Integer input2) {
+    public static void applicationHandler(String symbol, Double input1, Double input2) {
             
         key.put("+", new Add());
         key.put("-", new Minus());

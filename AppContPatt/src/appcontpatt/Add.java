@@ -12,8 +12,8 @@ package appcontpatt;
 public class Add implements calcInt{
     
     @Override
-    public void execute(Integer input1, Integer input2) {
-                Integer add = input1 + input2;
+    public void execute(Double input1, Double input2) {
+                Double add = input1 + input2;
                 System.out.println(add);
     
     
