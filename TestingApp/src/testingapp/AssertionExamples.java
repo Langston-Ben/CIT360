@@ -7,6 +7,9 @@
 
 package testingapp;
 
+import java.util.List;
+import java.util.Arrays;
+import static org.hamcrest.CoreMatchers.hasItems;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -45,5 +48,16 @@ public class AssertionExamples {
     
     assertArrayEquals(arrayOne, arrayTwo);
     
+    
+
+    
 }
+@Test
+public void rockBands() {
+    List<String> bands = Arrays.asList("Cream", "Led Zeppelin", "Pearl Jam", "Deep Purple");
+    
+    assertThat(bands, hasItems("Cream", "Led Zeppelin"));
+   
+}
+    
 }
