@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Servlet Demo</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <style>
+
+            fieldset {
+                font-weight: bold;      
+            }
+
+            form {
+                padding: 2em 2em 2em 2em;    
+                background-color: gray;
+                width: 40%;
+                border: solid black;
+                border-width: 1em;           
+            }
+
+        </style>
+
+    </head>
+    <body>
+        <form action="NewServlet" method="post">
+
+            <fieldset>
+                <legend>Enter Your Full Name</legend>  
+                <input name ="fullName" type="text" /> 
+            </fieldset>
+
+            <fieldset>
+                <legend>Grade Level</legend>
+                <input type="checkbox" name="grade" value="Freshmen" />Freshmen
+                <input type="checkbox" name="grade" value="Sophomore" />Sophomore
+                <input type="checkbox" name="grade" value="Junior" />Junior
+                <input type="checkbox" name="grade" value="Senior" />Senior
+            </fieldset>
+
+
+            <fieldset>
+                <legend>Favorite Operating System</legend>
+                <input type="radio" name="os" value="Mac"/>Mac
+                <input type="radio" name="os" value="Windows"/>Windows
+                <input type="radio" name="os" value="Linux"/>Linux  
+            </fieldset>
+
+
+            <fieldset>
+                <legend>Favorite Car:</legend> 
+                <select name="car">
+                    <option value="Ferrari">Ferrari</option>
+                    <option value="Corvette">Corvette</option>
+                    <option value="Mustang">Mustang</option>
+                    <option value="Camaro">Camaro</option>
+                    <option value="Mazda">Mazda</option>
+                </select>
+            </fieldset>
+            <p><input type ="submit" value="Sumbit Your Info" /></p>
+
+
+        </form>
+
+
+    </body>
+</html>
