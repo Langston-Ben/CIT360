@@ -6,6 +6,9 @@
       <id name="UID" column="uid" type="java.lang.Integer">
           <generator class="identity"/>
       </id>
+      
+      <property name="FNAME" type="string" column="fname"/>
+      <property name="LNAME" type="string" column="lname"/>
       <property name="UNAME" type="string" column="uname"/>
       
       <property name="UPASSWORD"  type="string" column="upassword"/>

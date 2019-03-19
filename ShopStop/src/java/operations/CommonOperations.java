@@ -29,8 +29,11 @@ public class CommonOperations {
          Query query = (Query) session.createQuery(SQL_QUERY);        
             for(Iterator it=query.iterate();it.hasNext();)  
             {  
-            Users u = (Users)it.next();  
+            Users u = (Users)it.next(); 
+           
             user.setUID(u.getUID());
+            user.setFNAME(u.getFNAME());
+            user.setLNAME(u.getLNAME());
             user.setUNAME(u.getUNAME());
             user.setUPASSWORD(u.getUPASSWORD()); 
             user.setValid(true);

@@ -1,9 +1,70 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Stop Shop Inventory Management</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+
+            fieldset {
+                font-weight: bold;      
+            }
+
+            form {
+                padding: 2em 2em 2em 2em;    
+                background-color: gray;
+                width: 40%;
+                border: solid black;
+                border-width: 1em;           
+            }
+
+        </style>
+
+    </head>
+    <body>
+        <form method="post" action="<%=request.getContextPath()%>/Login">
+
+            <fieldset>
+                <legend>Enter Your Account Credentials</legend>  
+                <input type="text" name="un"/> Username <br>
+                <input type="text" name="pw"/> Password
+                <p><input type="submit" value="Login"/></p>
+            </fieldset>
+
+        </form>
+            <form method="post" action="<%=request.getContextPath()%>/Register">
+            <fieldset>
+                <legend>Create an Account</legend>
+                
+                <input type="text" name="fn"/> First Name <br>
+                <input type="text" name="ln"/> Last Name <br>
+                <input type="text" name="un"/> Username <br>
+                <input type="text" name="pw"/> Password
+                <p><input type="submit" value="Register"/></p>
+            </fieldset>
+  
+            </form>
+      
+    </body>
+</html>
+
+
+
+<!-- 
+
+
+
+<!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Shop Stop Account Management</title>
     </head>
     <body>
     <center>
@@ -54,3 +115,5 @@
     </center>       
 </body>
 </html>
+
+-->

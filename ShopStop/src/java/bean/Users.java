@@ -11,6 +11,8 @@ package bean;
  */
 public class Users {
    private int UID;
+   private String FNAME;
+   private String LNAME;
    private String UNAME; 
    private String UPASSWORD;
 boolean valid;
@@ -22,6 +24,24 @@ boolean valid;
     public void setValid(boolean valid) {
         this.valid = valid;
     }
+
+    public String getFNAME() {
+        return FNAME;
+    }
+
+    public void setFNAME(String FNAME) {
+        this.FNAME = FNAME;
+    }
+
+    public String getLNAME() {
+        return LNAME;
+    }
+
+    public void setLNAME(String LNAME) {
+        this.LNAME = LNAME;
+    }
+    
+    
     public int getUID() {
         return UID;
     }

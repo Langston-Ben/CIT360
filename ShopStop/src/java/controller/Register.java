@@ -20,9 +20,14 @@ public class Register extends HttpServlet {
  @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+       
+       String fn=request.getParameter("fn");
+       String ln=request.getParameter("ln");
        String un=request.getParameter("un");
        String pw=request.getParameter("pw");
         Users user=new Users();
+        user.setFNAME(fn);
+        user.setLNAME(ln);
         user.setUNAME(un);
         user.setUPASSWORD(pw);
         CommonOperations commonOperations=new CommonOperations();
