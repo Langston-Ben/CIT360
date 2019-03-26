@@ -8,7 +8,28 @@
         <servlet-name>Register</servlet-name>
         <servlet-class>controller.Register</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Inventory</servlet-name>
+        <servlet-class>controller.Inventory</servlet-class>
+    </servlet>
     
+    <!--
+    <servlet>
+        <servlet-name>CategoryServlet</servlet-name>
+        <servlet-class>controller.CategoryServlet</servlet-class>
+    </servlet>
+     -->
+    
+    <servlet>
+        <servlet-name>ListServlet</servlet-name>
+        <servlet-class>controller.ListServlet</servlet-class>
+    </servlet>
+    
+   
+    <servlet>
+        <servlet-name>CategoryControl</servlet-name>
+        <servlet-class>controller.CategoryControl</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Login</servlet-name>
         <url-pattern>/Login</url-pattern>
@@ -17,7 +38,27 @@
         <servlet-name>Register</servlet-name>
         <url-pattern>/Register</url-pattern>
     </servlet-mapping>
-   
+    <servlet-mapping>
+        <servlet-name>Inventory</servlet-name>
+        <url-pattern>/Inventory</url-pattern>
+    </servlet-mapping>
+    
+      <!--
+    <servlet-mapping>
+        <servlet-name>Categories</servlet-name>
+        <url-pattern>/Categories</url-pattern>
+    </servlet-mapping>
+   -->
+  
+    <servlet-mapping>
+        <servlet-name>ListServlet</servlet-name>
+        <url-pattern>/ListServlet</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+        <servlet-name>CategoryControl</servlet-name>
+        <url-pattern>/CategoryControl</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30
@@ -26,4 +67,7 @@
     <welcome-file-list>
         <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
+    <!--
+    <url-pattern>/Inventory</url-pattern> 
+    <url-pattern>/Inventory</url-pattern> -->
 </web-app>

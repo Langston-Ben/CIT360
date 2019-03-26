@@ -1,21 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-    
-  <class name="bean.Users" catalog="shopstop" table="users">
-      <id name="UID" column="uid" type="java.lang.Integer">
-          <generator class="identity"/>
-      </id>
-      
-      <property name="FNAME" type="string" column="fname"/>
-      <property name="LNAME" type="string" column="lname"/>
-      <property name="UNAME" type="string" column="uname"/>
-      
-      <property name="UPASSWORD"  type="string" column="upassword"/>
-     
+  <class catalog="shopstop" name="bean.Users" table="users">
+    <id column="uid" name="UID" type="java.lang.Integer">
+      <generator class="identity"/>
+    </id>
+    <property column="fname" name="FNAME" type="string"/>
+    <property column="lname" name="LNAME" type="string"/>
+    <property column="uname" name="UNAME" type="string"/>
+    <property column="upassword" name="UPASSWORD" type="string"/>
+  </class>
+  
+  <class catalog="shopstop" name="bean.InvModel" table="inventory">
+    <id column="invId" name="invId" type="java.lang.Integer">
+      <generator class="identity"/>
+    </id>
+    <property column="categoryId" name="categoryId" type="java.lang.Integer"/>
+    <property column="invDescription" name="itemDesc" type="string"/>
+    <property column="invName" name="itemName" type="string"/>
+    <property column="invPrice" name="itemPrice" type="string"/>
+    <property column="invStock" name="itemStock" type="string"/>
+  </class>
+  
+  
+  <class catalog="shopstop" name="bean.CategoryModel" table="categories">
+    <id column="categoryId" name="categoryId" type="java.lang.Integer">
+      <generator class="identity"/>
+    </id>
+    <property column="categoryName" name="categoryName" type="string"/>
   </class>
 </hibernate-mapping>
-
 
 <!--
 <hibernate-mapping>

@@ -21,17 +21,25 @@ public class Login extends HttpServlet {
             throws ServletException, IOException {
         String un=request.getParameter("un");
         String pw=request.getParameter("pw");
+        
+        String fn=request.getParameter("fn");
+        String ln=request.getParameter("ln");
      
+        pw = Encryption.MD5(pw);
+        
         Users user=new Users();
         CommonOperations co=new CommonOperations();
         user.setUNAME(un);
         user.setUPASSWORD(pw);
         
+        user.setFNAME(fn);
+        user.setLNAME(ln);
+        
         user=co.getLoginDetails(user);
         if(user.isValid()){
             HttpSession session=request.getSession();
             session.setAttribute("currentsession", user);
-            response.sendRedirect("userhome.jsp?id="+user.getUID()+"&uname="+user.getUNAME());
+            response.sendRedirect("userhome.jsp?id="+user.getUID()+"&uname="+user.getUNAME()+"&fname="+user.getFNAME()+" "+"&lname="+user.getLNAME());
         }else{
             response.sendRedirect("index.jsp");           
         }

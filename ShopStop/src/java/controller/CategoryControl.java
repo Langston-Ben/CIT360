@@ -5,9 +5,9 @@
  */
 package controller;
 
-import bean.Users;
+import bean.CategoryModel;
+import bean.InvModel;
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -15,35 +15,36 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import operations.CommonOperations;
 
+/**
+ *
+ * @author benjaminlangston
+ */
 
-public class Register extends HttpServlet {
+    
+public class CategoryControl extends HttpServlet {
  @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
        
-       String fn=request.getParameter("fn");
-       String ln=request.getParameter("ln");
-       String un=request.getParameter("un");
-       String pw=request.getParameter("pw");
+       String ct=request.getParameter("ct");
        
-       pw = Encryption.MD5(pw);
        
-        Users user=new Users();
-        user.setFNAME(fn);
-        user.setLNAME(ln);
-        user.setUNAME(un);
-        user.setUPASSWORD(pw);
+       
+        CategoryModel cat =new CategoryModel();
+        cat.setCategoryName(ct);
+        
         
         CommonOperations commonOperations=new CommonOperations();
-        user=commonOperations.registerUser(user);
+        cat=commonOperations.categoryMgt(cat);
         
-        if(user.isValid()){
+        
+//        if(inv.isValid()){
             HttpSession session=request.getSession();
-            session.setAttribute("currentsession", user);
-            response.sendRedirect("index.jsp");
-        }else{
-            response.sendRedirect("failure.jsp");
+            session.setAttribute("currentsession", cat);
+            response.sendRedirect("category.jsp");
+//        }else{
+//            response.sendRedirect("failure.jsp");
            
         }
-    }
+    
 }

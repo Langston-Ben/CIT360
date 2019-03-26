@@ -1,6 +1,8 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<% String id=request.getParameter("id");
+<%String id=request.getParameter("id");
 String un=request.getParameter("uname");
+String fn=request.getParameter("fname");
+String ln=request.getParameter("lname");
 %>
 <!DOCTYPE html>
 <html>
@@ -29,8 +31,31 @@ String un=request.getParameter("uname");
     </head>
     <body>
         <center>
-        <h1>Welcome <%=un%></h1>
-        <h1>Your ID is <%=id%></h1>
+            <h3>The User Account for <%=un%> has been authenticated</h3>
+        <h1>Welcome To Shop Stop Inventory Management</h1>
+        
+        <h1><%=fn + ln%>
         </center>
+        
+        <form method="post" action="<%=request.getContextPath()%>/category.jsp">
+            <fieldset>
+                <legend>Select One Of The Following Options</legend> 
+                <p>Category Management</p>
+                <p><input type="submit" value="Categories"/></p>
+            </fieldset>
+        </form>
+            
+            <form method="get" action="<%=request.getContextPath()%>/ListServlet">
+            <fieldset>
+                <legend></legend> 
+                <p>Inventory Management</p>
+                <p><input type="submit" value="Inventory"/></p>
+            </fieldset>
+        </form>
+        
+        
+        
+        
     </body>
 </html>
+

@@ -5,6 +5,8 @@
  */
 package bean;
 
+import java.util.Objects;
+
 /**
  *
  * @author benjaminlangston
@@ -15,7 +17,7 @@ public class Users {
    private String LNAME;
    private String UNAME; 
    private String UPASSWORD;
-boolean valid;
+   boolean valid;
 
     public boolean isValid() {
         return valid;
@@ -65,5 +67,56 @@ boolean valid;
     public void setUPASSWORD(String UPASSWORD) {
         this.UPASSWORD = UPASSWORD;
     }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 73 * hash + this.UID;
+        hash = 73 * hash + Objects.hashCode(this.FNAME);
+        hash = 73 * hash + Objects.hashCode(this.LNAME);
+        hash = 73 * hash + Objects.hashCode(this.UNAME);
+        hash = 73 * hash + Objects.hashCode(this.UPASSWORD);
+        hash = 73 * hash + (this.valid ? 1 : 0);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Users other = (Users) obj;
+        if (this.UID != other.UID) {
+            return false;
+        }
+        if (this.valid != other.valid) {
+            return false;
+        }
+        if (!Objects.equals(this.FNAME, other.FNAME)) {
+            return false;
+        }
+        if (!Objects.equals(this.LNAME, other.LNAME)) {
+            return false;
+        }
+        if (!Objects.equals(this.UNAME, other.UNAME)) {
+            return false;
+        }
+        if (!Objects.equals(this.UPASSWORD, other.UPASSWORD)) {
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public String toString() {
+        return "Users{" + "UID=" + UID + ", FNAME=" + FNAME + ", LNAME=" + LNAME + ", UNAME=" + UNAME + ", UPASSWORD=" + UPASSWORD + ", valid=" + valid + '}';
+    }
+    
 }
 
