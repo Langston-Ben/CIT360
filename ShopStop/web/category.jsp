@@ -37,19 +37,14 @@
 
         <h1></h1>
     </center>
-<!--
-    <select name="category">
-        <c:forEach items="${toView}" var="category">
-            <option value="${category.key}">${category.va}</option>
-        </c:forEach>
-    </select>
--->
 
     <form method="post" action="<%=request.getContextPath()%>/CategoryControl">
         <fieldset>
             <input type="text" name="ct"/> Category <br>
             
             <p><input type="submit" value="Add Category"/></p>
+            <input type=button onClick="parent.location='userhome.jsp'" 
+                   value='Return'>
         </fieldset>
     </form>
 

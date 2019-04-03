@@ -5,17 +5,8 @@
  */
 package controller;
 
-
-
-import bean.CategoryModel;
-
 import java.io.IOException;
-import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Map;
-import java.util.HashMap;
- 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -28,20 +19,13 @@ import operations.CommonOperations;
 public class ListServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
  
+    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         CommonOperations dao = new CommonOperations();
-        
-//        ArrayList dao = new ArrayList();
- 
-//            Map<Integer, String> category = new CommonOperations.mapList();
-          
-            
-            
-            
-            Map<Integer, String> listCatagory = dao.MapList();
+           Map<Integer, String> listCatagory = dao.MapList();
             request.setAttribute("listCategory", listCatagory);
- 
+
             RequestDispatcher dispatcher = request.getRequestDispatcher("inventory.jsp");
             dispatcher.forward(request, response);
  

@@ -5,11 +5,8 @@
  */
 package controller;
 
-import bean.CategoryModel;
 import bean.InvModel;
-import bean.Users;
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -59,7 +56,7 @@ public class Inventory extends HttpServlet {
         if(inv.isValid()){
             HttpSession session=request.getSession();
             session.setAttribute("currentsession", inv);
-            response.sendRedirect("ListServlet");
+            response.sendRedirect("./ListServlet");
         }else{
             response.sendRedirect("failure.jsp");
            

@@ -10,20 +10,16 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Inventory Management</title>
         <style>
-
             h1 {
                 font-weight: bold;    
                 color: aqua;
             }
-
             body {
-
                 background-color: gray;
                 width: 80%;
                 border: solid black;
                 border-width: 1em;           
             }
-
         </style>
 
 
@@ -55,20 +51,19 @@
                 <label for ="categoryId">Category</label>
                 <option value="">--Please choose a category--</option>
 
-        <% Map<Integer, String> listCategory = (HashMap<Integer, String>) request.getAttribute("listCategory");
+                <% Map<Integer, String> listCategory = (HashMap<Integer, String>) request.getAttribute("listCategory");
+                    for (Entry<Integer, String> category : listCategory.entrySet()) {
+                %>
 
-            for (Entry<Integer, String> category : listCategory.entrySet()) {
-        %>
-        
-        
-        <option value="<%=category.getKey()%>">
-            <%=category.getValue()%>
-            
-        </option>
 
-        <%
-            }
-        %>
+                <option value="<%=category.getKey()%>">
+                    <%=category.getValue()%>
+
+                </option>
+
+                <%
+                    }
+                %>
 
     </select><br>
   <!--     <input type="text" name="ct"/> Category <br> -->
@@ -77,6 +72,10 @@
             <input type="text" name="ip"/> Item Price <br>
             <input type="text" name="is"/> Item Stock <br>
             <p><input type="submit" value="Add Inventory"/></p>
+            
+            <input type=button onClick="parent.location='userhome.jsp?id=22&uname=blangston&fname=Ben%20&lname=Langston'" 
+                   value='Return'>
+            
         </fieldset>
     </form>
 
@@ -85,5 +84,3 @@
 
 </body>
 </html>
-
-

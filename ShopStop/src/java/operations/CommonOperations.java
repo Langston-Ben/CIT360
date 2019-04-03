@@ -9,6 +9,8 @@ import bean.CategoryModel;
 import bean.InvModel;
 import bean.Users;
 import controller.CategoryControl;
+import java.io.File;
+import java.io.FileOutputStream;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -21,6 +23,7 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
+import org.quickconnectfamily.json.JSONOutputStream;
 
 public class CommonOperations {
 
@@ -101,10 +104,8 @@ public class CommonOperations {
 //
 //        return toView;
 //    }
-
     public CategoryModel categoryMgt(CategoryModel cat) {
-        
-        
+
         session = sessionFactory.openSession();
         session.beginTransaction();
         session.save(cat);
@@ -112,52 +113,48 @@ public class CommonOperations {
         session.close();
         return cat;
     }
-        
-        
-        
-    
+
 //
 //
-    public List<CategoryModel> list() {
-        session = sessionFactory.openSession();
-        session.beginTransaction();
-        Configuration configuration = new Configuration().configure();
-
-    configuration.addAnnotatedClass(bean.CategoryModel.class);
-//        List<toView> toViews = null;
-        
-
-//        List<CategoryModel> listCategory = session.createQuery("FROM bean.CategoryModel").list();
-        List<CategoryModel> listCategory = new ArrayList<>();
-//      
-        String SQL_QUERY = "FROM bean.CategoryModel order by categoryName";
-        Query query = (Query) session.createQuery(SQL_QUERY);
-        
-          
-               
-        
-        for (Iterator it = query.iterate(); it.hasNext();) {
-            CategoryModel u = (CategoryModel) it.next();
-            
-            String name= u.getCategoryName();
-
-            int id = u.getCategoryId();
-//            String name = u.getCategoryName();
-            
-            CategoryModel category = new CategoryModel(id, name);
-            
-            
+//    public List<CategoryModel> list() {
+//        session = sessionFactory.openSession();
+//        session.beginTransaction();
+//        Configuration configuration = new Configuration().configure();
 //
-//            u.setCategoryId(u.getCategoryId());
-//            u.setCategoryName(u.getCategoryName());
-            
-            listCategory.add(category);
-        }
-        session.getTransaction().commit();
-        session.close();
-        return listCategory;
-    }
-    
+//    configuration.addAnnotatedClass(bean.CategoryModel.class);
+////        List<toView> toViews = null;
+//        
+//
+////        List<CategoryModel> listCategory = session.createQuery("FROM bean.CategoryModel").list();
+//        List<CategoryModel> listCategory = new ArrayList<>();
+////      
+//        String SQL_QUERY = "FROM CategoryModel categoryModel order by categoryName";
+//        Query query = (Query) session.createQuery(SQL_QUERY);
+//        
+//          
+//               
+//        
+//        for (Iterator it = query.iterate(); it.hasNext();) {
+//            CategoryModel u = (CategoryModel) it.next();
+//            
+//            String name= u.getCategoryName();
+//
+//            int id = u.getCategoryId();
+////            String name = u.getCategoryName();
+//            
+//            CategoryModel category = new CategoryModel(id, name);
+//            
+//            
+////
+////            u.setCategoryId(u.getCategoryId());
+////            u.setCategoryName(u.getCategoryName());
+//            
+//            listCategory.add(category);
+//        }
+//        session.getTransaction().commit();
+//        session.close();
+//        return listCategory;
+//    }
 //    public void showAllRecord(){
 //        session=sessionFactory.openSession();
 //        session.beginTransaction();
@@ -177,32 +174,28 @@ public class CommonOperations {
         session.beginTransaction();
         Configuration configuration = new Configuration().configure();
 
-    configuration.addAnnotatedClass(bean.CategoryModel.class);
-        
+        configuration.addAnnotatedClass(bean.CategoryModel.class);
+
         Map<Integer, String> listCategory = new HashMap<>();
-     
-        String SQL_QUERY = "FROM bean.CategoryModel order by categoryName";
+
+        String SQL_QUERY = "FROM CategoryModel categoryModel order by CategoryName";
         Query query = (Query) session.createQuery(SQL_QUERY);
-        
+
         Iterator it = query.iterate();
 //            CategoryModel u = new CategoryModel();
-            
-            
-            while (it.hasNext()) {
-            
+
+        while (it.hasNext()) {
+
             CategoryModel u = (CategoryModel) it.next();
             int id = u.getCategoryId();
             String name = u.getCategoryName();
-            
+
             CategoryModel category = new CategoryModel(id, name);
-            
-            
 
             listCategory.put(category.getCategoryId(), category.getCategoryName());
-            
-            u.setCategoryId(u.getCategoryId());
-            u.setCategoryName(u.getCategoryName());
-            
+
+//            u.setCategoryId(u.getCategoryId());
+//            u.setCategoryName(u.getCategoryName());
 //            
 //            listCategory.add(category);
         }
@@ -210,5 +203,73 @@ public class CommonOperations {
         session.close();
         return listCategory;
     }
-    
+
+//    public Map<Integer,String> enlistEverything(){
+//    session = sessionFactory.openSession();
+////    Transaction tx = null;
+//    Map<Integer,String> toView = new LinkedHashMap<>();
+//   
+//        session.beginTransaction();
+//        Map<CategoryModel, String> category = (HashMap<CategoryModel, String>)(HashMap<CategoryModel, String>)
+//                session.createQuery("FROM bean.CategoryModel");
+//        
+//
+//        for(CategoryModel d : category){
+//            toView.put(d.getCategoryId(),d.getCategoryName());
+//        }
+//        session.getTransaction().commit();
+//        session.close();
+//    
+//    return toView;
+//    }
+//    
+//    public class InventoryReport {
+    public List InventoryReport() {
+
+        session = sessionFactory.openSession();
+        session.beginTransaction();
+        Configuration configuration = new Configuration().configure();
+
+        configuration.addAnnotatedClass(bean.CategoryModel.class);
+
+        List iReport = new ArrayList<>();
+
+        String SQL_QUERY = "FROM InvModel invModel order by invName";
+        Query query = (Query) session.createQuery(SQL_QUERY);
+
+        Iterator it = query.iterate();
+
+        while (it.hasNext()) {
+
+            InvModel u = (InvModel) it.next();
+
+            int iId = u.getInvId();
+            int cId = u.getCategoryId();
+            String iName = u.getItemName();
+            String iDesc = u.getItemDesc();
+            String iPrice = u.getItemPrice();
+            String iStock = u.getItemStock();
+
+            InvModel invReport = new InvModel(iId, cId, iName, iDesc, iPrice, iStock);
+            
+            iReport.add(invReport);
+//            File reportFile = new File("invReport.json");
+//
+//            System.out.println(invReport + " has been written to a file.");
+//
+//            try {
+//                FileOutputStream fileStream = new FileOutputStream(reportFile);
+//                JSONOutputStream jsonOut = new JSONOutputStream(fileStream);
+//                jsonOut.writeObject(invReport);
+//                jsonOut.close();
+//            } catch (Exception e) {
+//                System.out.println("Error Writing File Out");
+//            }
+
+        }
+        session.getTransaction().commit();
+        session.close();
+        return iReport;
+    }
+
 }

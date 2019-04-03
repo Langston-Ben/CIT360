@@ -53,6 +53,13 @@ String ln=request.getParameter("lname");
             </fieldset>
         </form>
         
+            <form method="get" action="<%=request.getContextPath()%>/reports.jsp">
+            <fieldset>
+                <legend></legend> 
+                <p>Report Management</p>
+                <p><input type="submit" value="Reports"/></p>
+            </fieldset>
+        </form>
         
         
         

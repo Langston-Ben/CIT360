@@ -12,23 +12,27 @@
         <servlet-name>Inventory</servlet-name>
         <servlet-class>controller.Inventory</servlet-class>
     </servlet>
-    
     <!--
     <servlet>
         <servlet-name>CategoryServlet</servlet-name>
         <servlet-class>controller.CategoryServlet</servlet-class>
     </servlet>
      -->
-    
     <servlet>
         <servlet-name>ListServlet</servlet-name>
         <servlet-class>controller.ListServlet</servlet-class>
     </servlet>
-    
-   
     <servlet>
         <servlet-name>CategoryControl</servlet-name>
         <servlet-class>controller.CategoryControl</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>TestServlet</servlet-name>
+        <servlet-class>controller.TestServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>InventoryReport</servlet-name>
+        <servlet-class>controller.InventoryReport</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>Login</servlet-name>
@@ -42,22 +46,27 @@
         <servlet-name>Inventory</servlet-name>
         <url-pattern>/Inventory</url-pattern>
     </servlet-mapping>
-    
-      <!--
+    <!--
     <servlet-mapping>
         <servlet-name>Categories</servlet-name>
         <url-pattern>/Categories</url-pattern>
     </servlet-mapping>
    -->
-  
     <servlet-mapping>
         <servlet-name>ListServlet</servlet-name>
         <url-pattern>/ListServlet</url-pattern>
     </servlet-mapping>
-    
     <servlet-mapping>
         <servlet-name>CategoryControl</servlet-name>
         <url-pattern>/CategoryControl</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>TestServlet</servlet-name>
+        <url-pattern>/TestServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>InventoryReport</servlet-name>
+        <url-pattern>/InventoryReport</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

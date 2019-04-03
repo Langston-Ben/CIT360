@@ -5,13 +5,14 @@
  */
 package bean;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 /**
  *
  * @author benjaminlangston
  */
-public class InvModel {
+public class InvModel implements Serializable {
     
     private int invId;
     private int categoryId;
@@ -23,9 +24,21 @@ public class InvModel {
 
     public InvModel() {
     }
+    
+    
 
     public int getInvId() {
         return invId;
+    }
+
+    public InvModel(int invId, int categoryId, String itemName, 
+            String itemDesc, String itemPrice, String itemStock) {
+        this.invId = invId;
+        this.categoryId = categoryId;
+        this.itemName = itemName;
+        this.itemDesc = itemDesc;
+        this.itemPrice = itemPrice;
+        this.itemStock = itemStock;
     }
 
     public void setInvId(int invId) {
