@@ -7,10 +7,17 @@ package operations;
 
 import bean.CategoryModel;
 import bean.InvModel;
+import bean.OnlineStore;
 import bean.Users;
 import controller.CategoryControl;
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.InputStreamReader;
+import java.io.Serializable;
+import java.net.HttpURLConnection;
+import java.net.URL;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -19,11 +26,17 @@ import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import static javax.ws.rs.core.HttpHeaders.USER_AGENT;
+import org.quickconnectionfamily.java.ContainerFactory;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
-import org.quickconnectfamily.json.JSONOutputStream;
+
+
+import org.quickconnectionfamily.java.JSONException;
+import org.quickconnectionfamily.java.JSONInputStream;
+import org.quickconnectionfamily.java.JSONOutputStream;
 
 public class CommonOperations {
 
@@ -251,7 +264,7 @@ public class CommonOperations {
             String iStock = u.getItemStock();
 
             InvModel invReport = new InvModel(iId, cId, iName, iDesc, iPrice, iStock);
-            
+
             iReport.add(invReport);
 //            File reportFile = new File("invReport.json");
 //
@@ -272,4 +285,218 @@ public class CommonOperations {
         return iReport;
     }
 
-}
+    public List UserReport() {
+        session = sessionFactory.openSession();
+        session.beginTransaction();
+        Configuration configuration = new Configuration().configure();
+
+        configuration.addAnnotatedClass(bean.CategoryModel.class);
+
+        List uReport = new ArrayList<>();
+
+        String SQL_QUERY = "from Users users order by LNAME";
+        Query query = (Query) session.createQuery(SQL_QUERY);
+
+        Iterator it = query.iterate();
+
+        while (it.hasNext()) {
+
+            Users u = (Users) it.next();
+
+            int uId = u.getUID();
+            String fName = u.getFNAME();
+            String lName = u.getLNAME();
+            String uName = u.getUNAME();
+            String pWord = u.getUPASSWORD();
+
+            Users UserReport = new Users(uId, fName, lName, uName, pWord);
+
+            uReport.add(UserReport);
+
+        }
+        session.getTransaction().commit();
+        session.close();
+        return uReport;
+    }
+
+    public List saveUserReport() {
+        session = sessionFactory.openSession();
+        session.beginTransaction();
+        Configuration configuration = new Configuration().configure();
+
+        configuration.addAnnotatedClass(bean.CategoryModel.class);
+
+        List suReport = new ArrayList<>();
+
+        String SQL_QUERY = "from Users users order by LNAME";
+        Query query = (Query) session.createQuery(SQL_QUERY);
+
+        Iterator it = query.iterate();
+
+        while (it.hasNext()) {
+
+            Users u = (Users) it.next();
+
+            int uId = u.getUID();
+            String fName = u.getFNAME();
+            String lName = u.getLNAME();
+            String uName = u.getUNAME();
+            String pWord = u.getUPASSWORD();
+
+            Users saveUserReport = new Users(uId, fName, lName, uName, pWord);
+
+            suReport.add(saveUserReport);
+
+        }
+
+        File reportFile = new File("suReport.json");
+        try {
+            FileOutputStream fileStream = new FileOutputStream(reportFile);
+            JSONOutputStream jsonOut = new JSONOutputStream(fileStream);
+            jsonOut.writeObject((Serializable) suReport);
+            jsonOut.close();
+        } catch (Exception e) {
+            System.out.println("Error Writing File Out");
+        }
+        session.getTransaction().commit();
+        session.close();
+        return suReport;
+    }
+
+   public  Map<String,OnlineStore> OnlineReport() throws Exception {
+        
+        
+        
+        Thread str = new Thread();
+        str.start();
+        
+        String url = ("https://api.myjson.com/bins/13wk6k");
+
+        URL obj = new URL(url);
+        
+        HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+
+        // optional default is GET
+        con.setRequestMethod("GET");
+        con.setRequestProperty("User-Agent", USER_AGENT);
+        
+        JSONInputStream inFromServer = new JSONInputStream(con.getInputStream());
+        HashMap<String, Object> iResult = 
+                (HashMap<String, Object>) inFromServer.readObject();
+        Map<String, OnlineStore> online = new HashMap<>();
+        
+        
+        OnlineStore getInfo = new OnlineStore();
+          
+            getInfo.setStoreItemName((String) iResult.get("storeItemName"));
+            getInfo.setStoreItemDesc((String) iResult.get("storeItemDesc"));
+            getInfo.setStoreItemPrice((String) iResult.get("storeItemPrice"));
+            getInfo.setStoreItemStock((String) iResult.get("storeItemStock"));
+            
+            OnlineStore getInfo2 = new OnlineStore();
+          
+            getInfo2.setStoreItemName((String) iResult.get("storeItemName1"));
+            getInfo2.setStoreItemDesc((String) iResult.get("storeItemDesc1"));
+            getInfo2.setStoreItemPrice((String) iResult.get("storeItemPrice1"));
+            getInfo2.setStoreItemStock((String) iResult.get("storeItemStock1"));
+            
+            OnlineStore getInfo3 = new OnlineStore();
+          
+            getInfo3.setStoreItemName((String) iResult.get("storeItemName2"));
+            getInfo3.setStoreItemDesc((String) iResult.get("storeItemDesc2"));
+            getInfo3.setStoreItemPrice((String) iResult.get("storeItemPrice2"));
+            getInfo3.setStoreItemStock((String) iResult.get("storeItemStock2"));
+            
+            OnlineStore getInfo4 = new OnlineStore();
+          
+            getInfo4.setStoreItemName((String) iResult.get("storeItemName3"));
+            getInfo4.setStoreItemDesc((String) iResult.get("storeItemDesc3"));
+            getInfo4.setStoreItemPrice((String) iResult.get("storeItemPrice3"));
+            getInfo4.setStoreItemStock((String) iResult.get("storeItemStock3"));
+            
+            OnlineStore getInfo5 = new OnlineStore();
+          
+            getInfo5.setStoreItemName((String) iResult.get("storeItemName4"));
+            getInfo5.setStoreItemDesc((String) iResult.get("storeItemDesc4"));
+            getInfo5.setStoreItemPrice((String) iResult.get("storeItemPrice4"));
+            getInfo5.setStoreItemStock((String) iResult.get("storeItemStock4"));
+            
+            online.put("1", getInfo);
+            online.put("2", getInfo2);
+            online.put("3", getInfo3);
+            online.put("3", getInfo4);
+            online.put("4", getInfo5);
+            
+            
+            
+        
+        
+//       
+
+//
+//        
+//        StringBuffer response;
+//        String inputLine;
+//        try (//        int responseCode = con.getResponseCode();
+//                BufferedReader in = new BufferedReader
+//                (new InputStreamReader(con.getInputStream()))) {
+//            
+//             JSONInputStream inFromServer = new JSONInputStream(in);
+//            
+//            response = new StringBuffer();
+//            while ((inputLine = in.readLine()) != null) {
+//                response.append(inputLine);
+//            }
+//        }
+        
+//       JSONObject iResult = new JSONObject("inputLine");
+        
+        
+//        JSONObject(response.toString());
+                  
+       
+        
+//        String iReport = new ArrayList<>()
+        
+//        iReport.add(strURL);
+//        String iResult = null;
+//        
+//        try {
+//            FileInputStream employeeIn = new FileInputStream(strURL);
+//            JSONInputStream jsonIn = new JSONInputStream(employeeIn);
+//            HashMap jsonMap = (HashMap) jsonIn.readObject();
+//            jsonIn.close();
+//
+//            OnlineStore getInfo = new OnlineStore();
+//            long price = (long) jsonMap.get("storeItemPrice");
+//            long stock = (long) jsonMap.get("storeItemStock");
+//            getInfo.setStoreItemPrice((int) price);
+//            getInfo.setStoreItemStock((int) stock);
+//            getInfo.setStoreItemName((String) jsonMap.get("storeItemName"));
+//            getInfo.setStoreItemDesc((String) jsonMap.get("storeItemDesc"));
+//
+//           iResult = JSONUtilities.stringify(getInfo);
+//            
+//        } catch (Exception e) {
+//            System.out.println("Error Reading File Input");
+//
+//        }
+
+        
+
+//        File reportFile = new File("suReport.json");
+//        try {
+//            FileOutputStream fileStream = new FileOutputStream(reportFile);
+//            JSONOutputStream jsonOut = new JSONOutputStream(fileStream);
+//            jsonOut.writeObject((Serializable) suReport);
+//            jsonOut.close();
+//        } catch (Exception e) {
+//            System.out.println("Error Writing File Out");
+//        }
+        
+        return online;
+    }
+        
+    }
+
+

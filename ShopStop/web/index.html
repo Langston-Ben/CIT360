@@ -1,4 +1,10 @@
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+unirest.("https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com")
+.header("X-RapidAPI-Host", "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com")
+.header("X-RapidAPI-Key", "e0206f7a30msh4bc20ee581aae94p1300bajsn318c0207eb8c")
+.header("Content-Type", "application/x-www-form-urlencoded")
+.end(function (result) {
+  console.log(result.status, result.headers, result.body);
+});<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.

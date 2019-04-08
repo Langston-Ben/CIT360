@@ -22,7 +22,7 @@
  
  */
 
-package org.quickconnectfamily.json;
+package org.quickconnectionfamily.java;
 
 import java.util.concurrent.Semaphore;
 /**

@@ -18,7 +18,30 @@ public class Users {
    private String UNAME; 
    private String UPASSWORD;
    boolean valid;
+   
+   
+ public Users() {
+    }
+    public Users(String FNAME, String LNAME, String UNAME) {
+        this.FNAME = FNAME;
+        this.LNAME = LNAME;
+        this.UNAME = UNAME;
+    }
 
+   
+
+    public Users(int UID, String FNAME, String LNAME, String UNAME, String UPASSWORD) {
+        this.UID = UID;
+        this.FNAME = FNAME;
+        this.LNAME = LNAME;
+        this.UNAME = UNAME;
+        this.UPASSWORD = UPASSWORD;
+    }
+
+   
+   
+   
+   
     public boolean isValid() {
         return valid;
     }

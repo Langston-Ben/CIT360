@@ -35,6 +35,14 @@ public class Inventory extends HttpServlet {
        String ip=request.getParameter("ip");
        String is=request.getParameter("is");
        
+       
+       if(ct.isEmpty() || in.isEmpty() || id.isEmpty() || 
+               ip.isEmpty() || is.isEmpty()) {
+        
+        response.sendRedirect("ListServlet");
+        return;
+        }
+       
        int nct = Integer.parseInt(ct);
        
         InvModel inv =new InvModel();

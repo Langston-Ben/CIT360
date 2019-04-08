@@ -24,6 +24,12 @@ public class Login extends HttpServlet {
         
         String fn=request.getParameter("fn");
         String ln=request.getParameter("ln");
+        
+        if(un.isEmpty() || pw.isEmpty()) {
+        
+        response.sendRedirect("index.jsp");
+        return;
+        }
      
         pw = Encryption.MD5(pw);
         

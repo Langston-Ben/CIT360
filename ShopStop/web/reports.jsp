@@ -30,7 +30,24 @@
     <body>
         <form action="<%=request.getContextPath()%>/InventoryReport"  method="get">
         <p><input type="submit"/> Inventory Report</p>
+        <input type=button onClick="parent.location='userhome.jsp'" 
+                   value='Return'>
   
         </form>
+        
+        <form action="<%=request.getContextPath()%>/UserReport"  method="get">
+        <p><input type="submit"/> User Report</p>
+        <input type=button onClick="parent.location='userhome.jsp'" 
+                   value='Return'>
+  
+        </form>
+        
+        <form action="<%=request.getContextPath()%>/OnlineStoreController"  method="get">
+        <p><input type="submit"/> Online Store items</p>
+        <input type=button onClick="parent.location='userhome.jsp'" 
+                   value='Return'>
+  
+        </form>
+        
     </body>
 </html>

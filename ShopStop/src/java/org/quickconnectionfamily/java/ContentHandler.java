@@ -1,4 +1,4 @@
-package org.quickconnectfamily.json;
+package org.quickconnectionfamily.java;
 
 import java.io.IOException;
 

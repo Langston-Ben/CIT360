@@ -1,18 +1,17 @@
 <%-- 
-    Document   : invReport
-    Created on : Apr 2, 2019, 7:28:26 AM
+    Document   : usrReport
+    Created on : Apr 3, 2019, 4:59:05 PM
     Author     : benjaminlangston
 --%>
 
-<%@page import="bean.Users"%>
-<%@page import="bean.InvModel"%>
 <%@page import="java.util.ArrayList"%>
+<%@page import="bean.Users"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Inventory Report</title>
+        <title>User Report</title>
         <style>
 
             h1 {
@@ -25,31 +24,30 @@
                 background-color: gray;
                 width: 80%;
                 border: solid black;
-                border-width: 1em;    
+                border-width: 1em;  
                 font-weight: 900;
             }
 
         </style>
     </head>
     <body>
-        <div align="center">
-            <table border="1" cellpadding="5">
-            <caption><h2>List of Inventory</h2></caption>
+          <div align="center">
+           
+        <table border="1" cellpadding="5">
+            <caption><h2>List of Users</h2></caption>
             <tr>
-                <th>ID</th>
-                <th>Category</th>
-                <th>Name</th>
-                <th>Desc</th>
-                <th>Price</th>
-                <th>Stock</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Username</th>
+                
             </tr>
             
             <%  
 // retrieve your list from the request, with casting 
-ArrayList<InvModel> list = (ArrayList<InvModel>) request.getAttribute("iReport");
+ArrayList<Users> ulist = (ArrayList<Users>) request.getAttribute("uReport");
 
 // print the information about every category of the list
-for(InvModel invModel : list) {
+for(Users users : ulist) {
   //  out.println(invModel.getInvId());
   //  out.println(invModel.getCategoryId());
   //  out.println(invModel.getItemName());
@@ -62,30 +60,19 @@ for(InvModel invModel : list) {
   
                 
                 <tr>
-                    <td><%=invModel.getInvId()%></td>
-                    <td><%=invModel.getCategoryId()%></td>
-                    <td><%=invModel.getItemName()%></td>
-                    <td><%=invModel.getItemDesc()%></td>
-                    <td><%=invModel.getItemPrice()%></td>
-                    <td><%=invModel.getItemStock()%></td>
+                    
+                    <td><%=users.getFNAME()%></td>
+                    <td><%=users.getLNAME()%></td>
+                    <td><%=users.getUNAME()%></td>
+                    
+                    
                 </tr>
             <%
         }
         %>
         </table>
         <br><br><input type=button onClick="parent.location='reports.jsp'" 
-               value='Return'>
-      
-        <form action="<%=request.getContextPath()%>/FileSaver"  method="post">
-            
-        <p><input type="submit"/> Save a Copy</p>
-        
-        </form>
-        
-        
-    </div>
-        
-       
-       
+                       value='Return'><br><br>
+          </div>
     </body>
 </html>

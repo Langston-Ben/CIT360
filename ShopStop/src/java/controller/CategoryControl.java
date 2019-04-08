@@ -28,6 +28,11 @@ public class CategoryControl extends HttpServlet {
        
        String ct=request.getParameter("ct");
        
+       if(ct.isEmpty()) {
+        response.sendRedirect("category.jsp");
+        return;
+        }
+       
        
        
         CategoryModel cat =new CategoryModel();

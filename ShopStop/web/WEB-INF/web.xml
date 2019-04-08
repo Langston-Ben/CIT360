@@ -34,6 +34,18 @@
         <servlet-name>InventoryReport</servlet-name>
         <servlet-class>controller.InventoryReport</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>UserReport</servlet-name>
+        <servlet-class>controller.UserReport</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>FileSaver</servlet-name>
+        <servlet-class>controller.FileSaver</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>OnlineStoreController</servlet-name>
+        <servlet-class>controller.OnlineStoreController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Login</servlet-name>
         <url-pattern>/Login</url-pattern>
@@ -67,6 +79,18 @@
     <servlet-mapping>
         <servlet-name>InventoryReport</servlet-name>
         <url-pattern>/InventoryReport</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UserReport</servlet-name>
+        <url-pattern>/UserReport</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>FileSaver</servlet-name>
+        <url-pattern>/FileSaver</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>OnlineStoreController</servlet-name>
+        <url-pattern>/OnlineStoreController</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

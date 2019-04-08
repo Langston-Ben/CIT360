@@ -13,7 +13,6 @@
     <property name="hibernate.show_sql">true</property>
     <property name="hibernate.hbm2ddl.auto">update</property>
     <mapping resource="usermapping.hbm.xml"/>
-    
     <!--
     <mapping resource="category.hbm.xml"/> -->
   </session-factory>
