@@ -5,8 +5,10 @@
  */
 package controller;
 
+import bean.Users;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import operations.CommonOperations;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -18,9 +20,9 @@ import static org.junit.Assert.*;
  *
  * @author benjaminlangston
  */
-public class ListServletTest {
+public class LoginTest {
     
-    public ListServletTest() {
+    public LoginTest() {
     }
     
     @BeforeClass
@@ -40,17 +42,26 @@ public class ListServletTest {
     }
 
     /**
-     * Test of doGet method, of class ListServlet.
+     * Test of doPost method, of class Login.
      */
     @Test
-    public void testDoGet() throws Exception {
-        System.out.println("doGet");
+    public void testDoPost() throws Exception {
+        
+        String pw;
+        pw = Encryption.MD5("PassWord");
+        Users user=new Users();
+        CommonOperations co=new CommonOperations();
+       
+        
+        user.setUNAME("blangston");
+        user.setUPASSWORD(pw);
+        
+        System.out.println("doPost");
         HttpServletRequest request = null;
         HttpServletResponse response = null;
-        ListServlet instance = new ListServlet();
-        instance.doGet(request, response);
-        // TODO review the generated test code and remove the default call to fail.
-//        fail("The test case is a prototype.");
+        Login instance = new Login();
+        instance.doPost(request, response);
+        
     }
     
 }
