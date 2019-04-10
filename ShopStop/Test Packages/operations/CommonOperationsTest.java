@@ -176,7 +176,7 @@ public class CommonOperationsTest {
     public void testOnlineReport() throws Exception {
         System.out.println("OnlineReport");
         CommonOperations instance = new CommonOperations();
-//        Map<String, OnlineStore> expResult = null;
+        Map<String, OnlineStore> expResult = null;
         Map<String, OnlineStore> result = instance.OnlineReport();
         assertNotNull(result);
 //        assertEquals(expResult, result);

@@ -46,6 +46,14 @@
         <servlet-name>OnlineStoreController</servlet-name>
         <servlet-class>controller.OnlineStoreController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ItemMGT</servlet-name>
+        <servlet-class>controller.ItemMGT</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>UserMGT</servlet-name>
+        <servlet-class>controller.UserMGT</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Login</servlet-name>
         <url-pattern>/Login</url-pattern>
@@ -91,6 +99,14 @@
     <servlet-mapping>
         <servlet-name>OnlineStoreController</servlet-name>
         <url-pattern>/OnlineStoreController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ItemMGT</servlet-name>
+        <url-pattern>/ItemMGT</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UserMGT</servlet-name>
+        <url-pattern>/UserMGT</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

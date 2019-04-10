@@ -23,11 +23,26 @@
 
             body {
 
-                background-color: gray;
+                background-color: darkslategray;
                 width: 80%;
                 border: solid black;
                 border-width: 1em;    
                 font-weight: 900;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            
+            table {
+                
+                margin-left: auto;
+                margin-right: auto;
+                background-color: gray;
+            }
+
+            center {
+                background-color: gray; 
+                padding: 2em;
+                
             }
 
         </style>

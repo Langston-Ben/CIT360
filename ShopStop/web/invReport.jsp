@@ -22,18 +22,33 @@
 
             body {
                     
-                background-color: gray;
+                background-color: darkslategray;
                 width: 80%;
                 border: solid black;
                 border-width: 1em;    
                 font-weight: 900;
+                margin-left: auto;
+                margin-right: auto;
             }
 
+            table {
+                
+                margin-left: auto;
+                margin-right: auto;
+                background-color: gray;
+            }
+
+            center {
+                background-color: gray; 
+                padding: 2em;
+                
+            }
+            
         </style>
     </head>
     <body>
         <div align="center">
-            <table border="1" cellpadding="5">
+            <table border="1" cellpadding="7">
             <caption><h2>List of Inventory</h2></caption>
             <tr>
                 <th>ID</th>
@@ -42,6 +57,7 @@
                 <th>Desc</th>
                 <th>Price</th>
                 <th>Stock</th>
+                <th></th>
             </tr>
             
             <%  
@@ -68,6 +84,12 @@ for(InvModel invModel : list) {
                     <td><%=invModel.getItemDesc()%></td>
                     <td><%=invModel.getItemPrice()%></td>
                     <td><%=invModel.getItemStock()%></td>
+                    <td><form action="<%=request.getContextPath()%>/ItemMGT" method="post"/>
+     
+                    <input type="hidden" id="fname"
+                              name="fname" value="<%=invModel.getInvId()%>"/>
+                    <input type="submit" value="Delete"/>
+                        </form></td>
                 </tr>
             <%
         }

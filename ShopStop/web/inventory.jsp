@@ -15,10 +15,25 @@
                 color: aqua;
             }
             body {
-                background-color: gray;
+                background-color: darkslategray;
                 width: 80%;
                 border: solid black;
-                border-width: 1em;           
+                border-width: 1em;     
+                margin-left: auto;
+                margin-right: auto;
+            }
+            
+            form {
+                
+                margin-left: auto;
+                margin-right: auto;
+                background-color: gray;
+            }
+
+            center {
+                background-color: gray; 
+                padding: 2em;
+                
             }
         </style>
 

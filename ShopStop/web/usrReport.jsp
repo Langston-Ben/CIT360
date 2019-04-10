@@ -21,11 +21,26 @@
 
             body {
                     
-                background-color: gray;
+                background-color: darkslategray;
                 width: 80%;
                 border: solid black;
                 border-width: 1em;  
                 font-weight: 900;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            
+            table {
+                
+                margin-left: auto;
+                margin-right: auto;
+                background-color: gray;
+            }
+
+            center {
+                background-color: gray; 
+                padding: 2em;
+                
             }
 
         </style>
@@ -39,6 +54,7 @@
                 <th>First Name</th>
                 <th>Last Name</th>
                 <th>Username</th>
+                <th></th>
                 
             </tr>
             
@@ -64,6 +80,12 @@ for(Users users : ulist) {
                     <td><%=users.getFNAME()%></td>
                     <td><%=users.getLNAME()%></td>
                     <td><%=users.getUNAME()%></td>
+                    <td><form action="<%=request.getContextPath()%>/UserMGT" method="post"/>
+     
+                    <input type="hidden" id="userName"
+                              name="userName" value="<%=users.getUID()%>"/>
+                    <input type="submit" value="Delete"/>
+                        </form></td>
                     
                     
                 </tr>

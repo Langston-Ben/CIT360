@@ -18,12 +18,26 @@ String ln=request.getParameter("lname");
 
             body {
                     
-                background-color: gray;
+                background-color: darkslategray;
                 width: 80%;
                 border: solid black;
-                border-width: 1em;           
+                border-width: 1em;  
+                margin-left: auto;
+                margin-right: auto;
+            }
+            
+            form {
+                
+                margin-left: auto;
+                margin-right: auto;
+                background-color: gray;
             }
 
+            center {
+                background-color: gray; 
+                padding: 2em;
+                
+            }
         </style>
         
         
@@ -56,7 +70,7 @@ String ln=request.getParameter("lname");
             <form method="get" action="<%=request.getContextPath()%>/reports.jsp">
             <fieldset>
                 <legend></legend> 
-                <p>Report Management</p>
+                <p>Reports  and Account Management</p>
                 <p><input type="submit" value="Reports"/></p>
             </fieldset>
         </form>

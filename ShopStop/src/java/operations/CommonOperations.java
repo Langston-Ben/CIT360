@@ -9,32 +9,24 @@ import bean.CategoryModel;
 import bean.InvModel;
 import bean.OnlineStore;
 import bean.Users;
-import controller.CategoryControl;
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileOutputStream;
-import java.io.InputStreamReader;
 import java.io.Serializable;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Iterator;
-import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import static javax.ws.rs.core.HttpHeaders.USER_AGENT;
-import org.quickconnectionfamily.java.ContainerFactory;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
 
-import org.quickconnectionfamily.java.JSONException;
 import org.quickconnectionfamily.java.JSONInputStream;
 import org.quickconnectionfamily.java.JSONOutputStream;
 
@@ -496,7 +488,43 @@ public class CommonOperations {
         
         return online;
     }
+
+    public InvModel delItem(InvModel inv) {
         
+        int r = inv.getInvId();
+        
+       
+        
+        session = sessionFactory.openSession();                     
+        session.beginTransaction();
+        String delItem = "Delete from InvModel invModel where invId = :invId";
+        Query query =session.createQuery(delItem);
+        query.setInteger("invId", r);
+        query.executeUpdate();
+        inv.setValid(true);
+        session.getTransaction().commit();
+        session.close();
+        return inv;
     }
+
+    public Users delUser(Users inv) {
+        int r = inv.getUID();
+        
+       
+        
+        session = sessionFactory.openSession();                     
+        session.beginTransaction();
+        String delUser = "Delete from Users users where UID = :UID";
+        Query query =session.createQuery(delUser);
+        query.setInteger("UID", r);
+        query.executeUpdate();
+        inv.setValid(true);
+        session.getTransaction().commit();
+        session.close();
+        return inv;
+    }
+    }
+        
+    
 
 

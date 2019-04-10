@@ -19,15 +19,32 @@ and open the template in the editor.
             form {
                 padding: 2em 2em 2em 2em;    
                 background-color: gray;
-                width: 40%;
+                width: 50%;
                 border: solid black;
-                border-width: 1em;           
+                border-width: 1em;   
+                margin-left: auto;
+                margin-right: auto;
+            }
+            
+            body {
+                background-color: darkslategray;
+   
+            }
+            
+            .top {
+                text-align: center;
+                font-family: fantasy;
+                font-weight: 900;
+                color: red;
             }
 
         </style>
 
     </head>
     <body>
+        <div class="top">
+        <h1>Welcome to ShopStop Inventory Control</h1>
+        <h2>Please Sign In or Create An Account</h2></div>
         <form method="post" action="<%=request.getContextPath()%>/Login">
 
             <fieldset>
