@@ -7,7 +7,6 @@ package controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.List;
 import java.util.Map;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -20,7 +19,7 @@ import operations.CommonOperations;
  *
  * @author benjaminlangston
  */
-public class FileSaver extends HttpServlet {
+public class invFileSaver extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -35,25 +34,13 @@ public class FileSaver extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            
-            CommonOperations dao = new CommonOperations();
-            Map uReport = (Map) dao.saveUserReport();
-            request.setAttribute("uReport", uReport);
+              CommonOperations dao = new CommonOperations();
+            Map invReport = (Map) dao.saveInvReport();
+            request.setAttribute("invReport", invReport);
 
             RequestDispatcher dispatcher = request.getRequestDispatcher("reports.jsp");
             dispatcher.forward(request, response);
         }
-//            /* TODO output your page here. You may use following sample code. */
-//            out.println("<!DOCTYPE html>");
-//            out.println("<html>");
-//            out.println("<head>");
-//            out.println("<title>Servlet FileSaver</title>");            
-//            out.println("</head>");
-//            out.println("<body>");
-//            out.println("<h1>Servlet FileSaver at " + request.getContextPath() + "</h1>");
-//            out.println("</body>");
-//            out.println("</html>");
-//        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

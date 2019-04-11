@@ -94,7 +94,13 @@ for(Users users : ulist) {
         %>
         </table>
         <br><br><input type=button onClick="parent.location='reports.jsp'" 
-                       value='Return'><br><br>
+                       value='Return'><br>
+        
+        <form action="<%=request.getContextPath()%>/FileSaver"  method="post">
+            
+            <p><input type="submit"/><br><br> Save a Copy</p>
+        
+        </form>
           </div>
     </body>
 </html>

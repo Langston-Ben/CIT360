@@ -38,6 +38,14 @@ public class Users {
         this.UPASSWORD = UPASSWORD;
     }
 
+    public Users(String FNAME, String LNAME, String UNAME, String UPASSWORD) {
+        this.FNAME = FNAME;
+        this.LNAME = LNAME;
+        this.UNAME = UNAME;
+        this.UPASSWORD = UPASSWORD;
+       
+    }
+
    
    
    

@@ -96,11 +96,11 @@ for(InvModel invModel : list) {
         %>
         </table>
         <br><br><input type=button onClick="parent.location='reports.jsp'" 
-               value='Return'>
+                       value='Return'><br>
       
-        <form action="<%=request.getContextPath()%>/FileSaver"  method="post">
+        <form action="<%=request.getContextPath()%>/invFileSaver"  method="post">
             
-        <p><input type="submit"/> Save a Copy</p>
+            <p><input type="submit"/><br><br> Save a Copy</p>
         
         </form>
         

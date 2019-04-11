@@ -84,6 +84,7 @@ public class CommonOperationsTest {
         Users expResult = user;
         Users result = instance.registerUser(user);
         assertEquals(expResult, result);
+        
        
     }
 
