@@ -13,8 +13,9 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link href="CSS/style.css" rel="stylesheet" type="text/css"/>
         <title>Online Store</title>
-        <style>
+  <!--      <style>
 
             h1 {
                 font-weight: bold;    
@@ -45,7 +46,7 @@
                 
             }
 
-        </style>
+        </style> -->
     </head>
     <body>
         <div align="center">

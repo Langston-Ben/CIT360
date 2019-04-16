@@ -10,34 +10,12 @@ and open the template in the editor.
         <title>Stop Shop Inventory Management</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <link href="CSS/style.css" rel="stylesheet" type="text/css"/>
         <style>
-
-            fieldset {
-                font-weight: bold;      
-            }
-
-            form {
-                padding: 2em 2em 2em 2em;    
-                background-color: gray;
-                width: 50%;
-                border: solid black;
-                border-width: 1em;   
-                margin-left: auto;
-                margin-right: auto;
-            }
             
-            body {
-                background-color: darkslategray;
-   
-            }
-            
-            .top {
-                text-align: center;
-                font-family: fantasy;
-                font-weight: 900;
-                color: red;
-            }
+           
 
+            
         </style>
 
     </head>
@@ -45,25 +23,31 @@ and open the template in the editor.
         <div class="top">
         <h1>Welcome to ShopStop Inventory Control</h1>
         <h2>Please Sign In or Create An Account</h2></div>
+        
         <form method="post" action="<%=request.getContextPath()%>/Login">
 
             <fieldset>
                 <legend>Enter Your Account Credentials</legend>  
-                <input type="text" name="un"/> Username <br>
+                <div class="forms">
+                    <input type="text" name="un"/> Username <br>
                 <input type="text" name="pw"/> Password
                 <p><input type="submit" value="Login"/></p>
+                </div>
             </fieldset>
 
-        </form>
+        </form><br><br>
+        
+        
             <form method="post" action="<%=request.getContextPath()%>/Register">
             <fieldset>
                 <legend>Create an Account</legend>
-                
+                <div class="forms">
                 <input type="text" name="fn"/> First Name <br>
                 <input type="text" name="ln"/> Last Name <br>
                 <input type="text" name="un"/> Username <br>
                 <input type="text" name="pw"/> Password
                 <p><input type="submit" value="Register"/></p>
+                </div>
             </fieldset>
   
             </form>

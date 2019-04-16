@@ -1,0 +1,266 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Apr 14, 2019, 12:49:04 AM
+    Author     : benjaminlangston
+*/
+fieldset {
+
+
+    border-color: darkred;
+
+    font-weight: 900; 
+    font-family: fantasy;
+
+}
+
+
+fieldset.p {
+
+    color: red;
+}
+
+body {
+    background-color: darkslategray;
+
+
+}
+
+fieldset {
+
+}
+
+form {
+    padding: 2em 2em 2em 2em;    
+    background-color: gray;
+    width: 50%;
+    border-radius: 2em;
+    border: solid darkred;
+    border-width: 1em;   
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+.top {
+    text-align: center;
+    font-family: fantasy;
+    font-weight: 900;
+    color: darkgrey;
+    text-shadow:  4px 4px 2px darkred;
+}
+
+
+legend {
+    font-size: 20px;
+    color:darkred;
+    font-weight: 900;
+    text-shadow:  1px 1px 1px darkred;
+
+}
+
+.input {
+    border: solid black;
+    color: darkred;
+    font-weight: 900;
+}
+
+
+.forms {
+
+    font-weight: 900;
+    color: darkred;
+}
+
+.forms input {
+
+    padding: 2px;
+    border: 4px solid darkred;
+    margin-bottom: 4px;
+}
+
+.forms [type="submit"] {
+
+    border: 2px solid darkred;
+    font-size: 14px;
+    font-family: fantasy;
+    background-color: darkred;
+    color: white;
+    font-weight: 900;
+    padding: 4px;
+
+
+}
+
+.forms [type="submit"]:hover {
+
+    color: darkred;
+    background-color: white;
+}
+
+.forms [type="button"] {
+    border: 2px solid darkred;
+    font-size: 14px;
+    font-family: fantasy;
+    background-color: darkred;
+    color: white;
+    font-weight: 900;
+    padding: 4px;
+    margin-left: auto;
+    margin-right: auto;
+    
+    
+}
+.forms [type="button"]:hover {
+    color: darkred;
+    background-color: white;
+    
+}
+
+.forms select {
+    
+    border: 2px solid darkred;
+    font-size: 14px;
+    font-family: fantasy;
+    background-color: darkred;
+    color: white;
+    font-weight: 900;
+    padding: 4px;
+    margin-bottom: 4px;
+    
+}
+
+.forms select option {
+    
+    border: 10em solid;
+}
+
+table {
+                
+                margin-left: auto;
+                margin-right: auto;
+                background-color: darkred;
+                border: 2em;
+                padding: 1em;
+                font-family: fantasy;
+                font-weight: 900;
+            }
+
+            table tr {
+                color: white; 
+                padding: 1em;
+                border: 2px solid;
+                
+            }
+            
+            table th {
+                
+                font-weight: bolder;
+                font-size: 1.5em;
+                padding: 1em;
+                border: 5px solid;
+                border-radius: 10px;
+                
+            }
+            
+            table td {
+                text-align: center;
+                border: 5px solid;
+                border-radius: 10px;
+                
+                
+            }
+            
+           .forms2 [type="button"] {
+                border: 2px solid darkred;
+                font-size: 14px;
+                font-family: fantasy;
+                background-color: darkred;
+                color: white;
+                font-weight: 900;
+                padding: 4px;
+                text-align: center;
+                margin-left: 48%;
+}
+
+.forms2 [type="button"]:hover {
+     color: darkred;
+    background-color: white;
+    
+    
+    
+}
+form.forms2 [type="submit"] {
+
+  
+    font-size: 14px;
+    font-family: fantasy;
+    background-color: darkred;
+    color: white;
+    font-weight: 900;
+    padding: 4px;
+   
+    text-align: center;
+    border:none;
+    border-radius: 0px;
+ 
+
+}
+
+form.forms2 [type="submit"]:hover {
+
+    color: darkred;
+    background-color: white;
+}
+
+form.forms2 {
+    
+    background-color: darkred;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+    text-align: center;
+    padding: 4px;
+    
+  
+}
+
+form.forms3 {
+    
+    background-color: darkslategray;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+    text-align: center;
+    padding: 4px;
+    border: none;
+   
+}
+
+
+form.forms3 [type="submit"] {
+
+  
+    font-size: 14px;
+    font-family: fantasy;
+    background-color: darkred;
+    color: white;
+    font-weight: 900;
+    padding: 8px;
+    
+    text-align: center;
+    border: none;
+   
+ 
+
+}
+
+form.forms3 [type="submit"]:hover {
+
+    color: darkred;
+    background-color: white;
+}

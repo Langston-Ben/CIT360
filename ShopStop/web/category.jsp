@@ -9,8 +9,9 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link href="CSS/style.css" rel="stylesheet" type="text/css"/>
         <title>Category Management</title>
-        <style>
+  <!--      <style>
 
             h1 {
                 font-weight: bold;    
@@ -40,26 +41,29 @@
                 
             }
 
-        </style>
+        </style> -->
 
 
 
     </head>
     <body>
-    <center>
+    <div class="top">
         <h3>Shop Stop</h3>
         <h1>Category Management Page</h1>
 
         <h1></h1>
-    </center>
+    </div>
 
     <form method="post" action="<%=request.getContextPath()%>/CategoryControl">
         <fieldset>
+            
+            <div class="forms">
             <input type="text" name="ct"/> Category <br>
             
             <p><input type="submit" value="Add Category"/></p>
-            <input type=button onClick="parent.location='userhome.jsp'" 
+            <input type=button onClick="parent.location='userhome.jsp?id=22&uname=blangston&fname=Ben%20&lname=Langston'" 
                    value='Return'>
+            </div>
         </fieldset>
     </form>
 

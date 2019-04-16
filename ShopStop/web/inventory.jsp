@@ -8,8 +8,9 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link href="CSS/style.css" rel="stylesheet" type="text/css"/>
         <title>Inventory Management</title>
-        <style>
+ <!--       <style>
             h1 {
                 font-weight: bold;    
                 color: aqua;
@@ -35,18 +36,18 @@
                 padding: 2em;
                 
             }
-        </style>
+        </style> -->
 
 
 
     </head>
     <body>
-    <center>
+    <div class="top">
         <h3>Shop Stop</h3>
         <h1>Inventory Management Page</h1>
 
         <h1></h1>
-    </center>
+    </div>
     
   
    <!-- 
@@ -61,10 +62,10 @@
 
     <form method="post" action="<%=request.getContextPath()%>/Inventory">
         <fieldset>
-            
+            <div class="forms">
             <select id="category" name="ct" type="number"> Select a Category
                 <label for ="categoryId">Category</label>
-                <option value="">--Please choose a category--</option>
+                <option value="">--Please Choose a Category--</option>
 
                 <% Map<Integer, String> listCategory = (HashMap<Integer, String>) request.getAttribute("listCategory");
                     for (Entry<Integer, String> category : listCategory.entrySet()) {
@@ -90,7 +91,7 @@
             
             <input type=button onClick="parent.location='userhome.jsp?id=22&uname=blangston&fname=Ben%20&lname=Langston'" 
                    value='Return'>
-            
+            </div>
         </fieldset>
     </form>
 

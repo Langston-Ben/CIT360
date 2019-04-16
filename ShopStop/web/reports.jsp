@@ -9,9 +9,10 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link href="CSS/style.css" rel="stylesheet" type="text/css"/>
         <title>Reports</title>
         
-        <style>
+  <!--      <style>
 
             fieldset {
                 font-weight: bold;      
@@ -43,29 +44,30 @@
             
            
 
-        </style>
+        </style> -->
     </head>
     <body>
+        <div class="forms">
         <form action="<%=request.getContextPath()%>/InventoryReport"  method="get">
         <p><input type="submit"/> Inventory Report and Removal</p>
         <input type=button onClick="parent.location='userhome.jsp'" 
                    value='Return'>
   
-        </form>
+        </form><br><br>
         
         <form action="<%=request.getContextPath()%>/UserReport"  method="get">
         <p><input type="submit"/> User Report and Removal</p>
         <input type=button onClick="parent.location='userhome.jsp'" 
                    value='Return'>
   
-        </form>
+        </form><br><br>
         
         <form action="<%=request.getContextPath()%>/OnlineStoreController"  method="get">
         <p><input type="submit"/> Online Store items</p>
-        <input type=button onClick="parent.location='userhome.jsp'" 
+        <input type=button onClick="parent.location='userhome.jsp?id=22&uname=blangston&fname=Ben%20&lname=Langston'" 
                    value='Return'>
   
-        </form>
-        
+        </form><br><br>
+        </div>
     </body>
 </html>
