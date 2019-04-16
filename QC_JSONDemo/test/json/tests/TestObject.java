@@ -1,4 +1,4 @@
-package org.quickconnectfamily.json.tests;
+package json.tests;
 
 import java.io.Serializable;
 import java.sql.Timestamp;

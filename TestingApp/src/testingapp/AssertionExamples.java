@@ -48,12 +48,6 @@ public class AssertionExamples {
     
     assertArrayEquals(arrayOne, arrayTwo);
     
-    
-
-    
-}
-@Test
-public void rockBands() {
     List<String> bands = Arrays.asList("Cream", "Led Zeppelin", "Pearl Jam", "Deep Purple");
     
     assertThat(bands, hasItems("Cream", "Led Zeppelin"));

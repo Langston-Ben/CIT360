@@ -37,3 +37,7 @@ Compiled source #
 .Trashes
 ehthumbs.db
 Thumbs.db
+/ConceptExercises/ConceptExercises/dist/
+/ConceptExercises/ConceptExercises/build/
+/ConceptExercises/ConceptExercises/nbproject/private/
+/ShopStop/ShopStop/nbproject/private/

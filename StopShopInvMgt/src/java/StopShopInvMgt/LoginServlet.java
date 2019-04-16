@@ -1,3 +1,5 @@
+package StopShopInvMgt;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -54,13 +56,13 @@ public class LoginServlet extends HttpServlet {
 //            out.println("</head>");
 //            out.println("<body>");
             
-            response.setContentType("account/html");
+            response.setContentType("account/xhtml");
 
             // New location to be redirected
             
-            String site = new String("account.html");
+            String site = "account.xhtml";
 
-            response.setStatus(response.SC_MOVED_TEMPORARILY);
+            response.setStatus(HttpServletResponse.SC_MOVED_TEMPORARILY);
             response.setHeader("Location", site);
         }
     }
